@@ -22,8 +22,9 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-# State files in .claude folder (same as widget)
-STATE_DIR = Path(__file__).parent
+# State files in Widget Engine/state folder
+SCRIPT_DIR = Path(__file__).parent
+STATE_DIR = SCRIPT_DIR.parent / 'state'
 VBUS_STATE_FILE = STATE_DIR / '.vbus_state.json'
 ML_TOOLS_STATE_FILE = STATE_DIR / '.ml_tools_state.json'
 AGENT_STATE_FILE = STATE_DIR / '.agent_state.json'

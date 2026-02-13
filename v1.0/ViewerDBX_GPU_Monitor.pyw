@@ -39,16 +39,23 @@ except ImportError:
 # Try subprocess for fallback nvidia-smi
 import subprocess
 
-# Paths
+# Paths - Widget Engine v1.0
 SCRIPT_DIR = Path(__file__).parent
-STATE_FILE = SCRIPT_DIR / '.gpu_monitor_state.json'
-VBUS_FILE = SCRIPT_DIR / '.vbus_state.json'
-GPU_ENGINE_DIR = SCRIPT_DIR.parent / 'GPU Engine'
-PARALLEL_ENGINE_DIR = SCRIPT_DIR.parent / 'Parallel Engine'
+WIDGET_ENGINE_DIR = SCRIPT_DIR.parent
+DOWNLOADS_ROOT = WIDGET_ENGINE_DIR.parent
+STATE_DIR = WIDGET_ENGINE_DIR / 'state'
+
+# State files in Widget Engine/state/
+STATE_FILE = STATE_DIR / '.gpu_monitor_state.json'
+VBUS_FILE = STATE_DIR / '.vbus_state.json'
+VBUS_STATE_FILE = STATE_DIR / '.vbus_state.json'
+ML_TOOLS_STATE_FILE = STATE_DIR / '.ml_tools_state.json'
+
+# Other engines at Downloads root level
+GPU_ENGINE_DIR = DOWNLOADS_ROOT / 'GPU Engine'
+PARALLEL_ENGINE_DIR = DOWNLOADS_ROOT / 'Parallel Engine'
 VRAM_KILLER = GPU_ENGINE_DIR / 'VRAM_EMERGENCY_KILLER.py'
-VBUS_CACHE_DIR = SCRIPT_DIR.parent / '.vbus_cache'
-VBUS_STATE_FILE = SCRIPT_DIR / '.vbus_state.json'  # From VBUS Resource Protector
-ML_TOOLS_STATE_FILE = SCRIPT_DIR / '.ml_tools_state.json'  # ML tool usage tracking
+VBUS_CACHE_DIR = DOWNLOADS_ROOT / '.vbus_cache'
 
 # Add Parallel Engine to path for system detection
 sys.path.insert(0, str(PARALLEL_ENGINE_DIR))

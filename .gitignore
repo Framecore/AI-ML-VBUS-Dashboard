@@ -1,4 +1,5 @@
 # State files (runtime generated)
+state/
 .vbus_state.json
 .ml_tools_state.json
 .agent_state.json
