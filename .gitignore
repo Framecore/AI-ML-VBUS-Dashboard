@@ -1,0 +1,25 @@
+# State files (runtime generated)
+.vbus_state.json
+.ml_tools_state.json
+.agent_state.json
+.gpu_monitor_state.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
